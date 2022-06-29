@@ -1,0 +1,17 @@
+{
+  "name": "css_generate_rotate",
+  "version": "1.0.0",
+  "homepage": "https://patrycjusznowaczyk.github.io/vue_generate_rotate/",
+  "description": "Simple css rotate generation app.",
+  "main": "app.js",
+  "repository": "https://github.com/PatrycjuszNowaczyk/vue_generate_rotate.git",
+  "author": "PatrycjuszNowaczyk <patrycjusz.nowaczyk@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "gh-pages": "^4.0.0"
+  },
+  "scripts": {
+    "deploy": "gh-pages -d ."
+  }
+}
