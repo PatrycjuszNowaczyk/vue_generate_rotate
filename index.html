@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="rotateSquare">
+            <div class="rotateSquare__settings">
+                <label for="rotate-x">
+                    <p>X: {{ rotate.x }} deg</p>
+                    <input id="rotate-x" type="range" min="-360" max="360" v-model="rotate.x">
+                </label>
+                <label for="rotate-y">
+                    <p>Y: {{ rotate.y }} deg</p>
+                    <input id="rotate-y" type="range" min="-360" max="360" v-model="rotate.y">
+                </label>
+                <label for="rotate-z">
+                    <p>Z: {{ rotate.z }} deg</p>
+                    <input id="rotate-z" type="range" min="-360" max="360" v-model="rotate.z">
+                </label>
+                <label for="perspective">
+                    <p>perspective: {{ perspective }} vw</p>
+                    <input id="perspective" type="range" :min="perspectiveMin" max="500" v-model="perspective">
+                </label>
+                <div class="rotateSquare__buttons">
+                    <button class="btn" @click="reset">Reset</button>
+                    <button class="btn" @click="random">Random</button>
+                    <button class="btn" @click="copy">Copy</button>
+                </div>
+            </div>
+            <div class="rotateSquare__screen" :style="perspectiveStyle">
+                <div class="rotateSquare__square" :style="rotateStyle">
+                </div>
+            </div>
+        </div>
+        <div class="modal" :class="{show: modalMsg}">
+            <p>
+            {{ modalMsg }}
+            </p>
+        </div>
+    </div>
+    <noscript>
+        <b>We're sorry but this app doesn't work properly without JavaScript enabled. Please enable it to continue.</b>
+    </noscript>
+    <script src="vue-3.2.37.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
